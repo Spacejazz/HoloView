@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "22699b13-dd15-4a33-8e10-d96fb486665a",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllReceivedDataFor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3088/up/?upaddress=0xd83535181E3222C6792aA71E549dD5Cf05e0a17b",
+					"host": [
+						"localhost"
+					],
+					"port": "3088",
+					"path": [
+						"up",
+						""
+					],
+					"query": [
+						{
+							"key": "upaddress",
+							"value": "0xd83535181E3222C6792aA71E549dD5Cf05e0a17b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByteData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3088/meta/data/?hash=QmXgvYtAResMTbz6jCeADrTSWjn7N8zxz1WNTV1qXvUcpk",
+					"host": [
+						"localhost"
+					],
+					"port": "3088",
+					"path": [
+						"meta",
+						"data",
+						""
+					],
+					"query": [
+						{
+							"key": "hash",
+							"value": "QmXgvYtAResMTbz6jCeADrTSWjn7N8zxz1WNTV1qXvUcpk"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
