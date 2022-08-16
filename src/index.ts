@@ -10,7 +10,7 @@ const server = createServer(app);
 
 app.route('/meta/data').get( async (req, res) => {
     if(typeof req.query.hash === 'string'){
-        res.send(await getData(req.query.hash));
+        res.send(Buffer.from(await getData(req.query.hash)));
     }else {
         res.send({
             status: 400,
