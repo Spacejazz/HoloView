@@ -6,25 +6,28 @@
 	},
 	"item": [
 		{
-			"name": "getAllReceivedDataFor",
+			"name": "deployLSP8Contract",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"controllerAddress\": \"0xCc59CBf7854a00FE24191fd12296F723C118e4Eb\",\n    \"name\": \"Rodney Mullen skateboard\",\n    \"symbol\": \"skatoken\",\n    \"digitalAssetMetadata\": {\n      \"LSP4Metadata\": {\n          \"description\": \"a Rodney Mullen Almost deck with the pieta and a joshua tree\",\n          \"images\": [\n              [\n                  {\n                      \"width\": 1024,\n                      \"height\": 512,\n                      \"hashFunction\": \"keccak256(bytes)\",\n                      \"hash\": \"a0eb681ed82293678a798b7dd5f5f93635e4ebb9afb8008204999aaaab45f16c\",\n                      \"url\": \"QmSVQcDmFkgnG2GAcnvzpsscbVcU2WyWmWwzsjg2qoSg5j\"\n                  }\n              ]\n          ],\n          \"assets\": [\n              {\n                  \"hashFunction\": \"keccak256(bytes)\",\n                  \"hash\": \"9ce8224f58526e288b8a2234c1416ab10e0a7b399c797a5aa44aa0764a6e3655\",\n                  \"url\": \"QmWN8QkFPd7vmDL5Q1pzkYzxt8UPdA195WJHoBXTXRZanM\",\n                  \"fileType\": \"fbx\"\n              }\n          ]\n      }\n  } \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:3088/up/?upaddress=0xd83535181E3222C6792aA71E549dD5Cf05e0a17b",
+					"raw": "localhost:3088/token/",
 					"host": [
 						"localhost"
 					],
 					"port": "3088",
 					"path": [
-						"up",
+						"token",
 						""
-					],
-					"query": [
-						{
-							"key": "upaddress",
-							"value": "0xd83535181E3222C6792aA71E549dD5Cf05e0a17b"
-						}
 					]
 				}
 			},
@@ -34,9 +37,15 @@
 			"name": "getByteData",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "default"
+					}
+				],
 				"url": {
-					"raw": "localhost:3088/meta/data/?hash=QmXgvYtAResMTbz6jCeADrTSWjn7N8zxz1WNTV1qXvUcpk",
+					"raw": "localhost:3088/meta/data/?hash=QmdbT2imVpsPmqV9aCEzPnraMWPX8TFvTCTUngNTL3z71c",
 					"host": [
 						"localhost"
 					],
@@ -49,7 +58,116 @@
 					"query": [
 						{
 							"key": "hash",
-							"value": "QmXgvYtAResMTbz6jCeADrTSWjn7N8zxz1WNTV1qXvUcpk"
+							"value": "QmdbT2imVpsPmqV9aCEzPnraMWPX8TFvTCTUngNTL3z71c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "directIPFSDownload",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.ipfsbrowser.com/ipfs/download.php?hash=Qmb1QgoUEbQ76zDZrLcAUt467VZHi4njfeefCFfX2pihjA",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ipfsbrowser",
+						"com"
+					],
+					"path": [
+						"ipfs",
+						"download.php"
+					],
+					"query": [
+						{
+							"key": "hash",
+							"value": "Qmb1QgoUEbQ76zDZrLcAUt467VZHi4njfeefCFfX2pihjA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deployLSP3UniversalProfile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Csabesz\",\n    \"description\": \"anything interesting about me\",\n    \"walletAddress\":\"0xEab37CA60ce88f0aDa26A383f943629638EE03d3\"    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3088/up/",
+					"host": [
+						"localhost"
+					],
+					"port": "3088",
+					"path": [
+						"up",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mint",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"universalProfileAddress\": \"0x40270Ee82dE43B34b9c95Ae84FfeD66282392733\",\n    \"contractAddress\": \"0x9F55940Ea25fA8eaB16E214DD70ECb09062E1E57\",\n    \"walletAddress\":\"0xCc59CBf7854a00FE24191fd12296F723C118e4Eb\"    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3088/token/mint/",
+					"host": [
+						"localhost"
+					],
+					"port": "3088",
+					"path": [
+						"token",
+						"mint",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getReceivedAssets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3088/up/?upaddress=0x40270Ee82dE43B34b9c95Ae84FfeD66282392733",
+					"host": [
+						"localhost"
+					],
+					"port": "3088",
+					"path": [
+						"up",
+						""
+					],
+					"query": [
+						{
+							"key": "upaddress",
+							"value": "0x40270Ee82dE43B34b9c95Ae84FfeD66282392733"
 						}
 					]
 				}
