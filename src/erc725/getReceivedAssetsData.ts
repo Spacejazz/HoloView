@@ -29,6 +29,7 @@ export const getReceivedAssetsWithMetadataFrom = async (upAddress: string) => {
   if(Array.isArray(ownedAssets)){
     const ownedAssetsMetadata =  ownedAssets.map(async (ownedAsset) => {
       // Instantiate the asset
+      console.log("ownedAsset: ", ownedAsset);
       const digitalAsset = new ERC725([
           {
             "name": "SupportedStandards:LSP4DigitalAsset",

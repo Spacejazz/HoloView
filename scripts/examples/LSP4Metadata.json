@@ -1,0 +1,39 @@
+{
+    "LSP4Metadata": {
+        "description": "The GLB and the mp4 is also smaller file size to test if its working",
+        "icon": [
+            {
+                "width": 256,
+                "height": 256,
+                "hashFunction": "keccak256(bytes)",
+                "hash": "0x1ffe139fbcba9a5e8582d164c7944461512a80b3d5e39b7014cf831d6ab12768",
+                "url": "ipfs://QmZFLAPsE9tWsUHi48J5xViMLeSmbnCUpvhb2Jj7pGE4ni"
+            }
+        ],
+        "images": [
+            [
+                {
+                    "width": 1800,
+                    "height": 1800,
+                    "hashFunction": "keccak256(bytes)",
+                    "hash": "0x75c1c8e7fe7ef26be71d45833e098fd713db2a95e026ca08089b3d645b6a6d54",
+                    "url": "ipfs://Qmf9a5NCFAVza9DJjBnNufwL82cxkMGDpPsLNTrq7jXQ9D"
+                }
+            ]
+        ],
+        "assets": [
+            {
+                "hashFunction": "keccak256(bytes)",
+                "hash": "ba44e8e74af059a8ecf5ccbfdabfc755d1db5a40d591a801935ea7620e4c76e9",
+                "url": "ipfs://QmZSf8Jas2jhV4vjeTegmjk6cXTx841sfo3u7RCnSKJbr9",
+                "fileType": "video/mp4"
+            },
+            {
+                "hashFunction": "keccak256(bytes)",
+                "hash": "ddbceb89c635743e2f21991b574202c14e57f26fde7aa52b3709a399322ca0ae",
+                "url": "ipfs://QmdbT2imVpsPmqV9aCEzPnraMWPX8TFvTCTUngNTL3z71c",
+                "fileType": "glb"
+            }
+        ]
+    }
+}

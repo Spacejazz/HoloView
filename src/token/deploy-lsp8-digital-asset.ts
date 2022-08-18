@@ -3,6 +3,8 @@
 import "dotenv/config";
 import { LSPFactory } from "@lukso/lsp-factory.js";
 import { L16 } from "../constants";
+
+import { toUTF8Array } from "../utils/toByteArray"
 import Web3 from "web3";
 
 import LSP8Mintable from '@lukso/lsp-smart-contracts/artifacts/LSP8Mintable.json';
@@ -19,100 +21,95 @@ const lspFactory = new LSPFactory(L16.endpoint, {
 
 const myEOA = web3.eth.accounts.wallet.add(process.env.PRIVATE_KEY || "");
 
-const upAddress = "0xE361C1137770Ed678883Ba3553A2dd5939bB94Ec";
-
-function toUTF8Array(str:string ) {
-let utf8 = [];
-  for (let i = 0; i < str.length; i++) {
-    let charcode = str.charCodeAt(i);
-      if (charcode < 0x80) utf8.push(charcode);
-      else if (charcode < 0x800) {
-          utf8.push(0xc0 | (charcode >> 6),
-                    0x80 | (charcode & 0x3f));
-      }
-      else if (charcode < 0xd800 || charcode >= 0xe000) {
-          utf8.push(0xe0 | (charcode >> 12),
-                    0x80 | ((charcode>>6) & 0x3f),
-                    0x80 | (charcode & 0x3f));
-      }
-      // surrogate pair
-      else {
-          i++;
-          // UTF-16 encodes 0x10000-0x10FFFF by
-          // subtracting 0x10000 and splitting the
-          // 20 bits of 0x0-0xFFFFF into two halves
-          charcode = 0x10000 + (((charcode & 0x3ff)<<10)
-                    | (str.charCodeAt(i) & 0x3ff));
-          utf8.push(0xf0 | (charcode >>18),
-                    0x80 | ((charcode>>12) & 0x3f),
-                    0x80 | ((charcode>>6) & 0x3f),
-                    0x80 | (charcode & 0x3f));
-      }
-  }
-  return utf8;
-}
+const upAddress = "0x40270Ee82dE43B34b9c95Ae84FfeD66282392733";
 
 
 console.log(`Loaded address: ${myEOA.address} from process.env`);
 
 const main = async () => {
   console.log("Deploying LSP8 Digital asset with lsp-factory.js");
- 
-  const metadata1 =  await lspFactory.LSP8IdentifiableDigitalAsset.deploy({
-    controllerAddress: myEOA.address,
-    name: 'MYTOKEN2',
-    symbol: 'DEMO2',
-    digitalAssetMetadata: {
-      description: "My Digital Asset",
-      links: [{
-        title: "Twitter website",
-        url: "https://twitter.com"
-      }],
-      images: [
-        [
-          {
-            width: 500,
-            height: 500,
-            hashFunction: 'keccak256(bytes)',
-            hash: '0xfdafad027ecfe57eb4ad044b938805d1dec209d6e9f960fc320d7b9b11cced14',
-            url: 'ipfs://QmPLqMFDxiUgYAom3Zg4SiwoxDaFcZpHXpCmiDzxrajSGp',
-          }
-        ]
-      ]
-    }
-  },
-  {
-    onDeployEvents: {
-      next: (deploymentEvent) => {
-        console.log("deploymentEvent", deploymentEvent);
-      },
-      error: (error) => {
-        console.error("error", error);
-      },
-      complete: (contracts) => {
-        console.log('Deployment Complete');
-        console.log(contracts.LSP8IdentifiableDigitalAsset);
-        
-      },
-    },
-  });
-  const myToken = new web3.eth.Contract(LSP8Mintable.abi as any, metadata1.LSP8IdentifiableDigitalAsset.address, {
-    gas: 5_000_000,
-    gasPrice: '1000000000',
-  });
-/*
- function mint(
-        address to,
-        bytes32 tokenId,
-        bool force,
-        bytes memory data
-        */
-  const mintResult = await myToken.methods.mint(upAddress, metadata1.LSP8IdentifiableDigitalAsset.address, false, toUTF8Array("{controllerAddress: myEOA.address, name: 'MYTOKEN2',symbol: 'DEMO2'}")).send({
-    from: web3.utils.toChecksumAddress(myEOA.address),
-  });
+  const jsonBody = {
+    "controllerAddress": myEOA.address,
+    "name": "Small asset size token",
+    "symbol": "sToken",
+    "digitalAssetMetadata": {
+      "LSP4Metadata": {
+          "description": "The GLB and the mp4 is also smaller file size to test if its working",
+          "icon": [
+              {
+                  "width": 256,
+                  "height": 256,
+                  "hashFunction": "keccak256(bytes)",
+                  "hash": "0x1ffe139fbcba9a5e8582d164c7944461512a80b3d5e39b7014cf831d6ab12768",
+                  "url": "ipfs://QmZFLAPsE9tWsUHi48J5xViMLeSmbnCUpvhb2Jj7pGE4ni"
+              }
+          ],
+          "images": [
+              [
+                  {
+                      "width": 1800,
+                      "height": 1800,
+                      "hashFunction": "keccak256(bytes)",
+                      "hash": "0x75c1c8e7fe7ef26be71d45833e098fd713db2a95e026ca08089b3d645b6a6d54",
+                      "url": "ipfs://Qmf9a5NCFAVza9DJjBnNufwL82cxkMGDpPsLNTrq7jXQ9D"
+                  }
+              ]
+          ],
+          "assets": [
+              {
+                  "hashFunction": "keccak256(bytes)",
+                  "hash": "ba44e8e74af059a8ecf5ccbfdabfc755d1db5a40d591a801935ea7620e4c76e9",
+                  "url": "ipfs://QmZSf8Jas2jhV4vjeTegmjk6cXTx841sfo3u7RCnSKJbr9",
+                  "fileType": "video/mp4"
+              },
+              {
+                  "hashFunction": "keccak256(bytes)",
+                  "hash": "ddbceb89c635743e2f21991b574202c14e57f26fde7aa52b3709a399322ca0ae",
+                  "url": "ipfs://QmdbT2imVpsPmqV9aCEzPnraMWPX8TFvTCTUngNTL3z71c",
+                  "fileType": "glb"
+              }
+          ]
+      }
+  } 
+};
 
-  console.log("Done mint: ", mintResult);
+    const metadata1 =  await lspFactory.LSP8IdentifiableDigitalAsset.deploy(
+      jsonBody,
+    {
+      onDeployEvents: {
+        next: (deploymentEvent) => {
+          console.log("deploymentEvent", deploymentEvent);
+        },
+        error: (error) => {
+          console.error("error", error);
+        },
+        complete: (contracts) => {
+          console.log('Deployment Complete');
+          console.log(contracts.LSP8IdentifiableDigitalAsset);
+          
+        },
+      },
+    });
+    console.log("right before getting the contract");
 
+    const myToken = new web3.eth.Contract(LSP8Mintable.abi as any, metadata1.LSP8IdentifiableDigitalAsset.address, {
+      gas: 5_000_000,
+      gasPrice: '1000000000',
+    });
+
+    console.log("right before minting");
+  /*
+   function mint(
+          address to,
+          bytes32 tokenId,
+          bool force,
+          bytes memory data
+          */
+    const mintResult = await myToken.methods.mint(upAddress, metadata1.LSP8IdentifiableDigitalAsset.address, false, toUTF8Array(JSON.stringify(jsonBody, undefined, 2))).send({
+      from: web3.utils.toChecksumAddress(myEOA.address),
+    });
+  
+    console.log("Done mint: ", mintResult);
 };
 
 main();
