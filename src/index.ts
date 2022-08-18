@@ -91,5 +91,5 @@ tokenMintRoute.post(async (req, res) => {
 })
 
 server.listen({ port }, () => {
-    console.log(`Example app listening on porty ${port}`)
+    console.log(`Lukso app listening on port ${port}`)
 });
