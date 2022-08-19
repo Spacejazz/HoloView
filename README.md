@@ -34,7 +34,9 @@ Good to have is a [Postman](https://www.postman.com/downloads/)
 ### server API calls
 
     - POST `localhost:3088/up/` ----> call responsible for deloying a universal profile to your controller wallet address
+    
         - *request body*
+
     ```
 {
     "name": "my cool universal profile name",
@@ -42,7 +44,9 @@ Good to have is a [Postman](https://www.postman.com/downloads/)
     "walletAddress":"YOUR WALLET ADDRESS"    
 }
     ```
+
         - *response*
+
     ```
 {
     "status": 200,
@@ -54,7 +58,9 @@ Good to have is a [Postman](https://www.postman.com/downloads/)
 
     - POST `localhost:3088/token/` ----> call responsible for deploying an LSP8 digital asset
         - *request body*   the request example is included in the postman collection or on the [Lukso documentation](https://docs.lukso.tech/tools/lsp-factoryjs/deployment/digital-asset#adding-images-and-assets) would be to lengthy to paste it here. NOTE: the field called `controllerAddress` should be your WALLET ADDRESS
+
         - *response*
+
     ```
 {
     "status": 200,
@@ -65,7 +71,9 @@ Good to have is a [Postman](https://www.postman.com/downloads/)
     ```
 
     - POST `localhost:3088/token/mint/`  ----> call responsible for min ting the given contract address
+
         - *request body*   
+
     ```
 {
     "universalProfileAddress": "UNIVERSAL PROFILE ADDRESS",
@@ -73,6 +81,7 @@ Good to have is a [Postman](https://www.postman.com/downloads/)
     "walletAddress":"WALLET ADDRESS"    
 }
     ```
+    
         - *response*  the response would be too lengthy, it shows all the information received from the minitng function
 
 
