@@ -16,3 +16,8 @@ export interface objectMetaData {
     url: string;
     fileType: string;
 }
+
+export interface linkMetaData {
+    title: string;
+    url: string;
+}
