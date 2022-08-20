@@ -1,7 +1,7 @@
 export interface imageMetaData {
-    width: Number;
-    height: Number;
-    hashFunction: string ;
+    width: number;
+    height: number;
+    hashFunction: string;
     hash: string;
     url: string;
 }

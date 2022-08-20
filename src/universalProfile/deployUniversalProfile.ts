@@ -1,21 +1,29 @@
 import "dotenv/config";
 import { LSPFactory } from "@lukso/lsp-factory.js";
 import { L16 } from "../constants";
+import { upMetaData } from "../interface/universalProfile";
 
 const lspFactory = new LSPFactory(L16.endpoint, {
     deployKey: process.env.PRIVATE_KEY, // Private key of the account which will deploy any smart contract,
     chainId: L16.chainId, // Chain Id of the network you want to deploy to
   });
 
-export async function deployUniversalProfileFor(walletAddress:string, name:string, description:string){
+export async function deployUniversalProfileFor(upMetaData: upMetaData){
 
+  const {walletAddress, name, description, links, profileImage, avatar, backgroundImage} = upMetaData;
+  
     const myContracts = await lspFactory.UniversalProfile.deploy({
       controllerAddresses: [walletAddress], 
       lsp3Profile: {
-        name: name,
-        description: description,
+        name,
+        description,
+        links,
+        profileImage,
+        backgroundImage,
+        avatar
       },
     });
+
     return {
       "address":myContracts.LSP0ERC725Account?.address
     }
