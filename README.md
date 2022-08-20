@@ -30,6 +30,7 @@ Good to have is a [Postman](https://www.postman.com/downloads/)
 
     - `npm run start`
     - `Lukso app listening on port` message will indicate that the server is running
+    - please note after any change on the server you need to restart the local server to take effect 
 
 ## server API calls
 
@@ -57,7 +58,7 @@ Good to have is a [Postman](https://www.postman.com/downloads/)
 ```
 
     - POST `localhost:3088/token/` ----> call responsible for deploying an LSP8 digital asset
-        - *request body*   the request example is included in the postman collection or on the [Lukso documentation](https://docs.lukso.tech/tools/lsp-factoryjs/deployment/digital-asset#adding-images-and-assets) would be to lengthy to paste it here. NOTE: the field called `controllerAddress` should be your WALLET ADDRESS
+        - *request body*   the request example is included in the postman collection, in our repository under `scripts/examples/LSP4Metadata.json` or on the [Lukso documentation](https://docs.lukso.tech/tools/lsp-factoryjs/deployment/digital-asset#adding-images-and-assets) would be to lengthy to paste it here. NOTE: the field called `controllerAddress` should be your WALLET ADDRESS
 
 #### response
 

@@ -1,31 +1,24 @@
 {
-  "name": "lsp-test",
+  "name": "reality-crisis-holoview",
   "version": "1.0.0",
-  "description": "Code snippets for LUKSO Build UP #1 - Tools workshop",
+  "description": "backend layer for the Holoview application wich connects to the Lukso L16 network",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gen:wallet": "clear && npx ts-node src/wallet/generate-wallet.ts",
-    "deploy:up": "clear && npx ts-node src/universalProfile/deploy-up.ts",
-    "deploy:lsp8": "clear && npx ts-node src/token/deploy-lsp8-digital-asset.ts",
-    "deploy:lsp7": "clear && npx ts-node src/token/deploy-lsp7-digital-asset.ts",
-    "get:bytes": "clear && npx ts-node src/erc725/fetchBytes.ts",
-    "get:received:assets": "clear && npx ts-node src/erc725/getReceivedAssetsData.ts",
-    "get": "clear && npx ts-node src/erc725/erc725js.ts",
-    "get:all": "clear && npx ts-node src/erc725/getAllAssets.ts",
     "stop": "npx kill-port 3088",
     "start": "npx ts-node src/index.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hugoo/build-up-1-tools-workshop.git"
+    "url": "git+https://gitlab.com/igor.dmitrus1/lukso_nft/-/tree/Develop"
   },
-  "author": "Csaba",
+  "author": "Bolyos Csaba",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hugoo/build-up-1-tools-workshop/issues"
+    "url": "https://gitlab.com/igor.dmitrus1/lukso_nft/-/issues"
   },
-  "homepage": "https://github.com/Hugoo/build-up-1-tools-workshop#readme",
+  "homepage": "https://gitlab.com/igor.dmitrus1/lukso_nft/-/blob/Develop/README.md",
   "dependencies": {
     "@erc725/erc725.js": "^0.14.4",
     "@lukso/lsp-factory.js": "^2.3.3",
