@@ -43,7 +43,7 @@ web3.eth.accounts.wallet.add(process.env.PRIVATE_KEY || "");
     //     bytes memory data
     // ) external;
 
-export async function transfer(payload : transferPayload, gas = 5_000_000, gasPrice = '10000000000', data = "{controllerAddress: myEOA.address, name: 'MYTOKEN2',symbol: 'DEMO2'}"){
+export async function transfer(payload : transferPayload, gas = 7, gasPrice = '7', data = "{controllerAddress: myEOA.address, name: 'MYTOKEN2',symbol: 'DEMO2'}"){
 
     const {contractAddress, universalProfileAddress, walletAddress, recepientWalletAddress} = payload;
     const myToken = new web3.eth.Contract(LSP8IdentifiableDigitalAsset.abi as any, contractAddress, {
