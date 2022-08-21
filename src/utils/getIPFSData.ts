@@ -1,4 +1,5 @@
 import axios from "axios";
+import { PINATA_IPFS } from "../constants";
 
 
 /**
@@ -8,7 +9,7 @@ import axios from "axios";
  */
 
 export const getData = async (hash: string) => {
-    return axios.get(`https://realitycrisis.mypinata.cloud/ipfs/${hash}`, {responseType: 'arraybuffer', responseEncoding: 'binary', timeout: 0})
+    return axios.get(`${PINATA_IPFS}${hash}`, {responseType: 'arraybuffer', responseEncoding: 'binary', timeout: 0})
     .then((response: any) => {
         //the response.data holds the byte array
         return response.data;

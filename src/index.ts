@@ -6,13 +6,16 @@ import { deployUniversalProfileFor } from './universalProfile/deployUniversalPro
 import { deployLSP8 } from './token/deployLSP8';
 import { mint } from './token/mint';
 import { transfer } from './token/transfer';
+import { getUniversalProfile } from './universalProfile/getUniversalProfile';
 
 const port = 3088
 
 const app = express();
 app.use(express.json());
 const server = createServer(app);
+const universalProfileAssetsRoute = app.route('/up/assets');
 const universalProfileRoute = app.route('/up');
+const universalProfileDeployRoute = app.route('/up/deploy');
 const tokenRoute = app.route('/token');
 const tokenMintRoute = app.route('/token/mint');
 const tokenTransferRoute = app.route('/token/transfer');
@@ -28,11 +31,14 @@ app.route('/meta/data').get(async (req, res) => {
     }
 })
 
-universalProfileRoute.get(async (req, res) => {
+universalProfileAssetsRoute.get(async (req, res) => {
     try {
         const upAddress = `${req.query.upaddress}`;
         if (upAddress) {
-            res.send(await getReceivedAssetsWithMetadataFrom(upAddress));
+            res.json({
+                status: 200,
+                data: res.send(await getReceivedAssetsWithMetadataFrom(upAddress))
+            });
         } else {
             res.send({
                 status: 400,
@@ -44,11 +50,36 @@ universalProfileRoute.get(async (req, res) => {
     }
 })
 
-universalProfileRoute.post(async (req, res) => {
+
+universalProfileRoute.get(async (req, res) => {
+    try {
+
+        const upAddress = `${req.query.upaddress}`;
+        if (upAddress) {
+            res.json({
+                status: 200,
+                data: await getUniversalProfile(upAddress)
+            })
+        } else {
+            res.send({
+                status: 400,
+                message: "Bad Request"
+            });
+        }
+    } catch (error) {
+        console.log("error: ", error);
+        res.json({
+            status: 400,
+            error
+        })
+    }
+})
+
+universalProfileDeployRoute.post(async (req, res) => {
     try {
         res.json({
             status: 200,
-            universalProfile: await deployUniversalProfileFor({ walletAddress:req.body.walletAddress,name: req.body.name,description: req.body.description})
+            universalProfile: await deployUniversalProfileFor({ walletAddress: req.body.walletAddress, name: req.body.name, description: req.body.description })
         })
     } catch (error) {
         console.log("error: ", error);
@@ -96,7 +127,7 @@ tokenTransferRoute.post(async (req, res) => {
     try {
         res.json({
             status: 200,
-            mint: await transfer({walletAddress: req.body.walletAddress, recepientWalletAddress: req.body.recepientWalletAddress, contractAddress: req.body.contractAddress, universalProfileAddress: req.body.universalProfileAddress})
+            mint: await transfer({ walletAddress: req.body.walletAddress, recepientWalletAddress: req.body.recepientWalletAddress, contractAddress: req.body.contractAddress, universalProfileAddress: req.body.universalProfileAddress })
         })
     } catch (error) {
         console.log("error: ", error);

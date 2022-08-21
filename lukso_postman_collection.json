@@ -222,6 +222,31 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "getUniversalProfileData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3088/up/?upaddress={{universal_profile}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3088",
+					"path": [
+						"up",
+						""
+					],
+					"query": [
+						{
+							"key": "upaddress",
+							"value": "{{universal_profile}}"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
@@ -256,12 +281,12 @@
 		},
 		{
 			"key": "contract_address",
-			"value": "",
+			"value": "0x594F712f3Bca512A4576F9c14684Fc8cf145ffb2",
 			"type": "default"
 		},
 		{
 			"key": "recepient_wallet_address",
-			"value": "",
+			"value": "0xC7dB9B0Ded2ec2daD04905285b367b98D9b7f4f9",
 			"type": "default"
 		}
 	]
