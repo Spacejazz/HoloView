@@ -5,7 +5,7 @@ import Web3 from "web3";
 import LSP3 from "@erc725/erc725.js/schemas/LSP3UniversalProfileMetadata.json";
 import { RPC_ENDPOINT } from "../constants";
 
-const upAddress = "0xE361C1137770Ed678883Ba3553A2dd5939bB94Ec";
+const upAddress = "0x8e7fB2512BB966CEa8eFBC08cF33035C440dF89B";
 
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
 const config = {

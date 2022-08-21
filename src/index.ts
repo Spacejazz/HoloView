@@ -5,6 +5,7 @@ import { getReceivedAssetsWithMetadataFrom } from './erc725/getReceivedAssetsDat
 import { deployUniversalProfileFor } from './universalProfile/deployUniversalProfile';
 import { deployLSP8 } from './token/deployLSP8';
 import { mint } from './token/mint';
+import { transfer } from './token/transfer';
 
 const port = 3088
 
@@ -14,6 +15,7 @@ const server = createServer(app);
 const universalProfileRoute = app.route('/up');
 const tokenRoute = app.route('/token');
 const tokenMintRoute = app.route('/token/mint');
+const tokenTransferRoute = app.route('/token/transfer');
 
 app.route('/meta/data').get(async (req, res) => {
     if (typeof req.query.hash === 'string') {
@@ -46,7 +48,7 @@ universalProfileRoute.post(async (req, res) => {
     try {
         res.json({
             status: 200,
-            universalProfile: await deployUniversalProfileFor(req.body.walletAddress, req.body.name, req.body.description)
+            universalProfile: await deployUniversalProfileFor({ walletAddress:req.body.walletAddress,name: req.body.name,description: req.body.description})
         })
     } catch (error) {
         console.log("error: ", error);
@@ -74,12 +76,27 @@ tokenRoute.post(async (req, res) => {
 
 
 tokenMintRoute.post(async (req, res) => {
-
     console.log("req: ", req.body);
     try {
         res.json({
             status: 200,
             mint: await mint(req.body.walletAddress, req.body.universalProfileAddress, req.body.contractAddress)
+        })
+    } catch (error) {
+        console.log("error: ", error);
+        res.json({
+            status: 400,
+            error
+        })
+    }
+})
+
+tokenTransferRoute.post(async (req, res) => {
+    console.log("req: ", req.body);
+    try {
+        res.json({
+            status: 200,
+            mint: await transfer({walletAddress: req.body.walletAddress, recepientWalletAddress: req.body.recepientWalletAddress, contractAddress: req.body.contractAddress, universalProfileAddress: req.body.universalProfileAddress})
         })
     } catch (error) {
         console.log("error: ", error);

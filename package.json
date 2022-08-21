@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gen:wallet": "clear && npx ts-node src/wallet/generate-wallet.ts",
+    "get:up": "clear && npx ts-node src/erc725/getAllAssets.ts",
     "stop": "npx kill-port 3088",
     "start": "npx ts-node src/index.ts"
   },
