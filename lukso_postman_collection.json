@@ -37,13 +37,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3088/up/",
+					"raw": "localhost:3088/up/deploy/",
 					"host": [
 						"localhost"
 					],
 					"port": "3088",
 					"path": [
 						"up",
+						"deploy",
 						""
 					]
 				}
@@ -143,13 +144,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3088/up/?upaddress={{universal_profile}}",
+					"raw": "localhost:3088/up/assets/?upaddress={{universal_profile}}",
 					"host": [
 						"localhost"
 					],
 					"port": "3088",
 					"path": [
 						"up",
+						"assets",
 						""
 					],
 					"query": [
