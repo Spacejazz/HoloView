@@ -1,6 +1,6 @@
 export interface transferPayload {
     universalProfileAddress: string,
     walletAddress: string ;
-    recepientWalletAddress: string;
+    recepientUniversalProfileAddress: string;
     contractAddress: string;
 }

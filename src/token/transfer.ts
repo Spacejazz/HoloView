@@ -43,22 +43,20 @@ web3.eth.accounts.wallet.add(process.env.PRIVATE_KEY || "");
     //     bytes memory data
     // ) external;
 
-export async function transfer(payload : transferPayload, gas = 7, gasPrice = '7', data = "{controllerAddress: myEOA.address, name: 'MYTOKEN2',symbol: 'DEMO2'}"){
+export async function transfer(payload : transferPayload, gas = 190209, gasPrice = '8', data = "{controllerAddress: myEOA.address, name: 'MYTOKEN2',symbol: 'DEMO2'}"){
 
-    const {contractAddress, universalProfileAddress, walletAddress, recepientWalletAddress} = payload;
+    const {contractAddress, universalProfileAddress, walletAddress, recepientUniversalProfileAddress} = payload;
     const myToken = new web3.eth.Contract(LSP8IdentifiableDigitalAsset.abi as any, contractAddress, {
         gas,
         gasPrice,
     });
 
-    // const mintResult = await myToken.methods.transfer(universalProfileAddress, "0x6168ca697a45c17F4190B8C4706e828944f75584", contractAddress, true, toUTF8Array(data)).send({
+    // const mintResult = await myToken.methods.transfer(universalProfileAddress, "0xE361C1137770Ed678883Ba3553A2dd5939bB94Ec",  contractAddress, false, toUTF8Array(data)).send({
     //     from: web3.utils.toChecksumAddress(walletAddress),
-    //     to: web3.utils.toChecksumAddress(recepientWalletAddress),
-    //     tokenId: contractAddress,
-    //     force: true,
+    //     contractAddress
     // });
 
-    const mintResult = await myToken.methods.transfer(universalProfileAddress, "0x6168ca697a45c17F4190B8C4706e828944f75584", contractAddress, true, toUTF8Array(data)).call();
+    const mintResult = await myToken.methods.transfer( recepientUniversalProfileAddress, universalProfileAddress, contractAddress, true, toUTF8Array(data)).call();
 
     return {
         result: mintResult
