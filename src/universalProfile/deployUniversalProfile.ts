@@ -10,17 +10,39 @@ const lspFactory = new LSPFactory(L16.endpoint, {
 
 export async function deployUniversalProfileFor(upMetaData: upMetaData){
 
-  const {walletAddress, name, description, links, profileImage, avatar, backgroundImage} = upMetaData;
+  const {walletAddress, name, description, profileImage, backgroundImage} = upMetaData;
   
+  console.log("properties", {
+    controllerAddresses: [walletAddress], 
+    lsp3Profile: {
+      name,
+      description,
+      profileImage,
+      backgroundImage
+    },
+  });
+
     const myContracts = await lspFactory.UniversalProfile.deploy({
       controllerAddresses: [walletAddress], 
       lsp3Profile: {
         name,
         description,
-        links,
         profileImage,
-        backgroundImage,
-        avatar
+        backgroundImage
+      },
+    },
+    {
+      onDeployEvents: {
+        next: (deploymentEvent) => {
+          console.log(deploymentEvent);
+        },
+        error: (error) => {
+          console.error(error);
+        },
+        complete: (contracts) => {
+          console.log('Deployment Complete');
+          console.log(contracts);
+        },
       },
     });
 
