@@ -21,7 +21,7 @@ const erc725 = new ERC725(
 
 const main = async () => {
   console.log("Starting...");
-  const data = await erc725.fetchData("LSP3Profile");
+  const data = await erc725.fetchData("LSP12IssuedAssets[]");
 
 
 

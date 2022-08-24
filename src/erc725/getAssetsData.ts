@@ -3,8 +3,10 @@ import { ERC725, ERC725JSONSchema } from "@erc725/erc725.js";
 import Web3 from "web3";
 import LSP3 from "@erc725/erc725.js/schemas/LSP3UniversalProfileMetadata.json";
 import { RPC_ENDPOINT } from "../constants";
+import { AssetType } from "../common/enum";
 
 const lsp5Schema = "LSP5ReceivedAssets[]";
+const lsp12Schema = "LSP12IssuedAssets[]";
 const lsp4Schema = "LSP4Metadata";
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
 const config = {
@@ -13,7 +15,7 @@ const config = {
 
 
 
-export const getReceivedAssetsWithMetadataFrom = async (upAddress: string) => {
+export const getAssetsWithMetadataFrom = async (upAddress: string, type : AssetType) => {
   const erc725 = new ERC725(
     LSP3 as ERC725JSONSchema[],
     upAddress,
@@ -23,13 +25,12 @@ export const getReceivedAssetsWithMetadataFrom = async (upAddress: string) => {
 
   console.log("payload", upAddress);
 // fetches the needed data from the universal profile
-  const data = await erc725.fetchData(lsp5Schema);
+  const data = await erc725.fetchData(type === AssetType.RECEIVED ? lsp5Schema : lsp12Schema);
   const ownedAssets = data.value;
   // check if the returned data is an array or an object
   if(Array.isArray(ownedAssets)){
     const ownedAssetsMetadata =  ownedAssets.map(async (ownedAsset) => {
       // Instantiate the asset
-      console.log("ownedAsset: ", ownedAsset);
       const digitalAsset = new ERC725([
           {
             "name": "SupportedStandards:LSP4DigitalAsset",
@@ -82,10 +83,6 @@ export const getReceivedAssetsWithMetadataFrom = async (upAddress: string) => {
 
     const fetchedMetadata = await Promise.all(ownedAssetsMetadata);
 
-    fetchedMetadata.forEach(mData => {
-       console.log("metaData",JSON.stringify(mData, undefined, 2));
-    });
-
     return fetchedMetadata;
   }else{
       // Instantiate the asset
@@ -137,7 +134,6 @@ export const getReceivedAssetsWithMetadataFrom = async (upAddress: string) => {
 
       const ownedAssetsMetadata = await digitalAsset.fetchData(lsp4Schema);
 
-       console.log("metaData",JSON.stringify(ownedAssetsMetadata, undefined, 2));
     return [ownedAssetsMetadata];
   
   }

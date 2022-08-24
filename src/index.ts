@@ -1,12 +1,13 @@
 import express from 'express';
 import { createServer } from 'http';
 import { getData } from "./utils/getIPFSData";
-import { getReceivedAssetsWithMetadataFrom } from './erc725/getReceivedAssetsData';
+import { getAssetsWithMetadataFrom } from './erc725/getAssetsData';
 import { deployUniversalProfileFor } from './universalProfile/deployUniversalProfile';
 import { deployLSP8 } from './token/deployLSP8';
 import { mint } from './token/mint';
 import { transfer } from './token/transfer';
 import { getUniversalProfile } from './universalProfile/getUniversalProfile';
+import { assetType } from './utils/mapAssetType';
 
 const port = 3088
 
@@ -34,10 +35,12 @@ app.route('/meta/data').get(async (req, res) => {
 universalProfileAssetsRoute.get(async (req, res) => {
     try {
         const upAddress = `${req.query.upaddress}`;
+        const assets_type = assetType(`${req.query.type}`.toUpperCase());
+        
         if (upAddress) {
             res.json({
                 status: 200,
-                data: res.send(await getReceivedAssetsWithMetadataFrom(upAddress))
+                data : res.send(await getAssetsWithMetadataFrom(upAddress, assets_type))
             });
         } else {
             res.send({
@@ -79,7 +82,7 @@ universalProfileDeployRoute.post(async (req, res) => {
     try {
         res.json({
             status: 200,
-            universalProfile: await deployUniversalProfileFor({ walletAddress: req.body.walletAddress, name: req.body.name, description: req.body.description })
+            universalProfile: await deployUniversalProfileFor({ walletAddress: req.body.walletAddress, name: req.body.name, description: req.body.description, profileImage: req.body.profileImage, backgroundImage: req.body.backgroundImage})
         })
     } catch (error) {
         console.log("error: ", error);
@@ -127,7 +130,7 @@ tokenTransferRoute.post(async (req, res) => {
     try {
         res.json({
             status: 200,
-            mint: await transfer({ walletAddress: req.body.walletAddress, recepientWalletAddress: req.body.recepientWalletAddress, contractAddress: req.body.contractAddress, universalProfileAddress: req.body.universalProfileAddress })
+            mint: await transfer({ walletAddress: req.body.walletAddress, recepientUniversalProfileAddress: req.body.recepientUniversalProfileAddress, contractAddress: req.body.contractAddress, universalProfileAddress: req.body.universalProfileAddress })
         })
     } catch (error) {
         console.log("error: ", error);
