@@ -23,7 +23,6 @@ export const getAssetsWithMetadataFrom = async (upAddress: string, type : AssetT
     config
   );
 
-  console.log("payload", upAddress);
 // fetches the needed data from the universal profile
   const data = await erc725.fetchData(type === AssetType.RECEIVED ? lsp5Schema : lsp12Schema);
   const ownedAssets = data.value;

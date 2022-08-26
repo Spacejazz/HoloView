@@ -23,7 +23,10 @@ const tokenTransferRoute = app.route('/token/transfer');
 
 app.route('/meta/data').get(async (req, res) => {
     if (typeof req.query.hash === 'string') {
-        res.send(Buffer.from(await getData(req.query.hash)));
+        const data = await getData(req.query.hash);
+        const bufferedData = Buffer.from(data);
+        
+        res.send(bufferedData);
     } else {
         res.send({
             status: 400,
@@ -110,7 +113,6 @@ tokenRoute.post(async (req, res) => {
 
 
 tokenMintRoute.post(async (req, res) => {
-    console.log("req: ", req.body);
     try {
         res.json({
             status: 200,
@@ -126,7 +128,6 @@ tokenMintRoute.post(async (req, res) => {
 })
 
 tokenTransferRoute.post(async (req, res) => {
-    console.log("req: ", req.body);
     try {
         res.json({
             status: 200,

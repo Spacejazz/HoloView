@@ -20,10 +20,9 @@ const erc725 = new ERC725(
 );
 
 const main = async () => {
-  console.log("Starting...");
   const data = await erc725.fetchData("LSP12IssuedAssets[]");
 
-
+// here the console log makes sense since htis code is not desigened as API call rather internal test of the functions 
 
 console.log("Done", JSON.stringify(data, undefined, 2));
 };

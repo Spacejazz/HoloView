@@ -51,12 +51,12 @@ export async function transfer(payload : transferPayload, gas = 190209, gasPrice
         gasPrice,
     });
 
-    // const mintResult = await myToken.methods.transfer(universalProfileAddress, "0xE361C1137770Ed678883Ba3553A2dd5939bB94Ec",  contractAddress, false, toUTF8Array(data)).send({
-    //     from: web3.utils.toChecksumAddress(walletAddress),
-    //     contractAddress
-    // });
+    const mintResult = await myToken.methods.transfer(universalProfileAddress, recepientUniversalProfileAddress,  contractAddress, false, toUTF8Array(data)).send({
+        from: web3.utils.toChecksumAddress(walletAddress),
+        contractAddress
+    });
 
-    const mintResult = await myToken.methods.transfer( recepientUniversalProfileAddress, universalProfileAddress, contractAddress, true, toUTF8Array(data)).call();
+    // const mintResult = await myToken.methods.transfer( universalProfileAddress, recepientUniversalProfileAddress, contractAddress, true, toUTF8Array(data)).call();
 
     return {
         result: mintResult
