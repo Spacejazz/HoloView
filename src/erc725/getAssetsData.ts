@@ -7,6 +7,7 @@ import { AssetType } from "../common/enum";
 
 const lsp5Schema = "LSP5ReceivedAssets[]";
 const lsp12Schema = "LSP12IssuedAssets[]";
+const lsp4TokenName = "LSP4TokenName";
 const lsp4Schema = "LSP4Metadata";
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
 const config = {
@@ -77,7 +78,15 @@ export const getAssetsWithMetadataFrom = async (upAddress: string, type : AssetT
         , ownedAsset, provider, config);
     
       // Get the encoded data
-      return await digitalAsset.fetchData(lsp4Schema);
+      const res = await digitalAsset.fetchData([lsp4Schema,lsp4TokenName])
+
+      if(Array.isArray(res)){ 
+        const result = res[0] as any;
+        result.name = res[1].value;
+        return result;
+      }else { 
+        return res;
+      }
     });
 
     const fetchedMetadata = await Promise.all(ownedAssetsMetadata);
@@ -131,7 +140,7 @@ export const getAssetsWithMetadataFrom = async (upAddress: string, type : AssetT
       ]
       , ownedAssets, provider, config);
 
-      const ownedAssetsMetadata = await digitalAsset.fetchData(lsp4Schema);
+      const ownedAssetsMetadata = await digitalAsset.fetchData([lsp4Schema,lsp4TokenName]);
 
     return [ownedAssetsMetadata];
   
