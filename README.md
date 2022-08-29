@@ -1,24 +1,29 @@
-# Lukso_NFT
+# HoloView 
+An AR NFT viewer for mobile devices devloped by the team at [Reality Crisis](https://realitycrisis.io/) 
+
+Team members: Kasmir, Igor, Csabi, Vlad, Nathan 
+Email: 
+
+For more information about Reality Crisis and a deeper breakdown of our experience with this Build UP visit our [medium ](https://medium.com/p/3cf095a15792/edit)site.
+
+## Description
+
+HoloView is a mobile application for Android and IOS that allows users to view all LSP8 based assets stored under a Universal Profile in Augmented Reality. Users can bring assets into an AR environment, place, scale, rotate their assets to a desired position, and then save the position of those assets in space to be re-called at any time.
+
+## Middle Layer 
+
+Utilizing Postman as a middle layer, Holoview is able to retrieve data from assets stored within a Universal Profile on the Lukso network. In the process of developing the middle layer we also created utility functions to help deploy Universal Profiles and LSP8 contracts with ease.
+
+These utility functions include: 
+-getUniversalProfileData
+-getByteData
+-getAssets
+-deployLSP3UniversalProfile
+-deployLSP8contract
+-mint 
+-transfer
 
 
-
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/igor.dmitrus1/lukso_nft.git
-git branch -M main
-git push -uf origin main
-```
 
 ## Integrate with your tools
 
