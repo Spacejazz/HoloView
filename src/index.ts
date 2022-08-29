@@ -41,10 +41,7 @@ universalProfileAssetsRoute.get(async (req, res) => {
         const assets_type = assetType(`${req.query.type}`.toUpperCase());
         
         if (upAddress) {
-            res.json({
-                status: 200,
-                data : res.send(await getAssetsWithMetadataFrom(upAddress, assets_type))
-            });
+            res.send(await getAssetsWithMetadataFrom(upAddress, assets_type));
         } else {
             res.send({
                 status: 400,
