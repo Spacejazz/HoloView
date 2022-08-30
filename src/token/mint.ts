@@ -12,7 +12,7 @@ web3.setProvider(currentProvider);
 
 web3.eth.accounts.wallet.add(process.env.PRIVATE_KEY || "");
 
-export async function mint(walletAddress:string, universalProfileAddress:string, contractAddress:string, gas = 5_000_000, gasPrice = '10000000000', data = "{controllerAddress: myEOA.address, name: 'MYTOKEN2',symbol: 'DEMO2'}"){
+export async function mint(walletAddress:string, universalProfileAddress:string, contractAddress:string, gas = 5_000_000, gasPrice = '10000000000', data = " "){
 
     const myToken = new web3.eth.Contract(LSP8Mintable.abi as any, contractAddress, {
         gas,

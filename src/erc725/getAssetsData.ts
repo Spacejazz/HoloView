@@ -2,7 +2,7 @@ require("isomorphic-fetch");
 import { ERC725, ERC725JSONSchema } from "@erc725/erc725.js";
 import Web3 from "web3";
 import LSP3 from "@erc725/erc725.js/schemas/LSP3UniversalProfileMetadata.json";
-import { RPC_ENDPOINT } from "../constants";
+import { LUKSO_IPFS, RPC_ENDPOINT } from "../constants";
 import { AssetType } from "../common/enum";
 
 const lsp5Schema = "LSP5ReceivedAssets[]";
@@ -11,7 +11,7 @@ const lsp4TokenName = "LSP4TokenName";
 const lsp4Schema = "LSP4Metadata";
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
 const config = {
-  ipfsGateway: "https://2eff.lukso.dev/ipfs/",
+  ipfsGateway: LUKSO_IPFS,
 };
 
 
