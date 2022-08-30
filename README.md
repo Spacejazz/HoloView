@@ -14,7 +14,7 @@ HoloView is a mobile application for Android and IOS that allows users to view a
 
 ## Architecture 
 description and diagram for how HoloView interacts with our server and additional services like the Lukso L16 and the Piñata IPFS network. 
-![HoloView Architecture](https://www.bbc.com/news/newsbeat-61494094)
+
 
 ## Build Documentation 
 
