@@ -45,16 +45,16 @@ An invitation to use the Holoview IOS version through Testflight has been sent t
 [Link to Android version](https://drive.google.com/drive/folders/1Qf_gKMLAoa_2-LYODVDs563OjywI0EFs?usp=sharing) 
 
 ## UI walkthrough 
- - Profile: View your Universal Profile and metadata linked to Universal Profile 
-   - Go To Collection: Opens tab showing all NFTs under your Universal Profile 
+ - `Profile`: View your Universal Profile and metadata linked to Universal Profile 
+   - `Go To Collection`: Opens tab showing all NFTs under your Universal Profile 
      - Inside this tab select the NFTs you want to bring into your scene 
- - Collection: View the same tab containing NFTs for selection 
- - AR Scan: Scan your enviroment and genereate planes/ coordinates for assets to sit on 
- - NFTS: Opens secondary wheel of selected NFTs to bring into the scene 
+ - `Collection`: View the same tab containing NFTs for selection 
+ - `AR Scan`: Scan your enviroment and genereate planes/ coordinates for assets to sit on 
+ - `NFTS`: Opens secondary wheel of selected NFTs to bring into the scene 
    - drag and drop assets into the scene
    - pinch to scale, twist to rotate
    - if asset has been placed use crosshairs and wrench to move, scale, and rotate 
- - Anchor: Lock asset to coordiante at current placement, rotation, and scale. 
+ - `Anchor`: Lock asset to coordiante at current placement, rotation, and scale. 
    - Name and Save Anchor to recall at another time 
-   - Load: Recall previously saved anchors 
- - Record: drops UI and begins screen recording scene. Press "Lukso" text at bottom to end recording. 
+   - `Load`: Recall previously saved anchors 
+ - `Record`: drops UI and begins screen recording scene. Press "Lukso" text at bottom to end recording. 
