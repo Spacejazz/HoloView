@@ -13,8 +13,8 @@ Team members:
 HoloView is a mobile application for Android and IOS that allows users to view all LSP8 based assets stored under a Universal Profile in Augmented Reality. Users can bring assets into an AR environment, place, scale, rotate their assets to a desired position, and then save the position of those assets in space to be re-called at any time.
 
 ## Architecture 
-
-
+description and diagram for how HoloView interacts with our server and additional services like the Lukso L16 and the Piñata IPFS network. 
+![HoloView Architecture](blob:https://realitycrisis.atlassian.net/7075f723-7ffd-4d3c-93d5-1586385554d5)
 
 ## Build Documentation 
 
