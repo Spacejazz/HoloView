@@ -87,3 +87,8 @@ Good to have is a [Postman](https://www.postman.com/downloads/)
 ```
     
 #### response  the response would be too lengthy, it shows all the information received from the minitng function
+
+
+
+
+![wefwef](https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/ec/e6/ece69181-708a-496e-b2b7-eaf7078b99e0/gettyimages-1310156391.jpg)
