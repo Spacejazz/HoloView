@@ -45,6 +45,7 @@ An invitation to use the Holoview IOS version through Testflight has been sent t
 [Link to Android version](https://drive.google.com/drive/folders/1Qf_gKMLAoa_2-LYODVDs563OjywI0EFs?usp=sharing) 
 
 ## UI Walkthrough 
+![UI Diagram](https://gitlab.com/igor.dmitrus1/lukso_nft/-/raw/Develop/images/hexagon.jpeg)
  - `Profile`: View your Universal Profile and metadata linked to Universal Profile 
    - `Go To Collection`: Opens tab showing all NFTs under your Universal Profile 
      - Inside this tab select the NFTs you want to bring into your scene 
