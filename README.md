@@ -1,7 +1,7 @@
 # HoloView 
 An AR NFT viewer for Universal Profiles avaialble on Android and IOS devloped by the team at [Reality Crisis](https://realitycrisis.io/) 
 
-![Sneek Peak](https://gitlab.com/-/ide/project/igor.dmitrus1/lukso_nft/edit/Develop/-/images/holoview.gif)
+![Sneek Peak](https://gitlab.com/igor.dmitrus1/lukso_nft/-/raw/a33ddc490eedf2369569ec4e2e28395ce3ca5bf7/images/holoview.gif)
 
 Team members: 
  - Kasmir Lehto : kasimir.lehto@realitycrisis.io
