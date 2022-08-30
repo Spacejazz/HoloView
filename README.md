@@ -21,7 +21,7 @@ Holoview is composed of three main parts the Unity build, Reality Crisis backend
 
 - The L16 testnet is Luksos ecosystem containing the assets, profiles, and contracts being called by Holoview. The most important elements for this build are the Universal Profile which acts as the account connecting to Holoview and the LSP8 Contracts which contain the link to the assets and data for objects in Holoview. 
 
-![Architecture Diagram](https://gitlab.com/igor.dmitrus1/lukso_nft/-/raw/Develop/images/archdiagram.png){width=60%,height:256px}
+![Architecture Diagram](https://gitlab.com/igor.dmitrus1/lukso_nft/-/raw/Develop/images/archdiagram.png)
 
 ## Build Documentation 
 
@@ -42,4 +42,4 @@ An invitation to use the Holoview IOS version through Testflight has been sent t
  - jean@lukso.io 
  - marjorie@lukso.io
 
-Link to Android version 
+[Link to Android version](https://drive.google.com/drive/folders/1Qf_gKMLAoa_2-LYODVDs563OjywI0EFs?usp=sharing) 
