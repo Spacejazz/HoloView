@@ -1,8 +1,13 @@
 # HoloView 
 An AR NFT viewer for mobile devices devloped by the team at [Reality Crisis](https://realitycrisis.io/) 
 
-Team members: Kasmir, Igor, Csabi, Vlad, Nathan 
-Email: 
+Team members: 
+ Kasmir Lehto : kasimir.lehto@realitycrisis.io
+ Igor Dmytrus : igor.dmitrus@realitycrisis.io
+ Csaba Bolyós : bladeszasza@gmail.com
+ Vlad Pereverziev : vladyslav.pereverziev@realitycrisis.io
+ Nathan Lienau : nlienau1@gmail.com
+
 
 For more information about Reality Crisis and a deeper breakdown of our experience with this Build UP visit our [medium ](https://medium.com/p/3cf095a15792/edit)site.
 
@@ -10,16 +15,4 @@ For more information about Reality Crisis and a deeper breakdown of our experien
 
 HoloView is a mobile application for Android and IOS that allows users to view all LSP8 based assets stored under a Universal Profile in Augmented Reality. Users can bring assets into an AR environment, place, scale, rotate their assets to a desired position, and then save the position of those assets in space to be re-called at any time.
 
-## Postman Middle Layer 
 
-Utilizing Postman as a middle layer, Holoview is able to retrieve data from assets stored within a Universal Profile on the Lukso network. In the process of developing the middle layer we also created utility functions to help deploy Universal Profiles and LSP8 contracts with ease.
-
-Read about backend and middle layer [here](https://realitycrisis.atlassian.net/wiki/spaces/HOL/pages/2041937921/Get+Assets)
-
-## Postman in action 
-
-link to video 
-
-## Holoview in action 
-
-link to video 
