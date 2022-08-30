@@ -2,11 +2,11 @@
 An AR NFT viewer for Universal Profiles avaialble on Android and IOS devloped by the team at [Reality Crisis](https://realitycrisis.io/) 
 
 Team members: 
- Kasmir Lehto : kasimir.lehto@realitycrisis.io
- Igor Dmytrus : igor.dmitrus@realitycrisis.io
- Csaba Bolyós : bladeszasza@gmail.com
- Vlad Pereverziev : vladyslav.pereverziev@realitycrisis.io
- Nathan Lienau : nlienau1@gmail.com
+ - Kasmir Lehto : kasimir.lehto@realitycrisis.io
+ - Igor Dmytrus : igor.dmitrus@realitycrisis.io
+ - Csaba Bolyós : bladeszasza@gmail.com
+ - Vlad Pereverziev : vladyslav.pereverziev@realitycrisis.io
+ - Nathan Lienau : nlienau1@gmail.com
 
 ## Description
 
