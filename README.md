@@ -25,8 +25,8 @@ Holoview is composed of three main parts the Unity build, Reality Crisis backend
 
 ## Build Documentation 
 
-[Back End Documentation ](https://realitycrisis.atlassian.net/wiki/spaces/HOL/pages/2038235137/Backend+layer)
-[Hollow View Documentation](https://realitycrisis.atlassian.net/wiki/spaces/HOL/pages/2041970692/Holoview+app)
+ - [Back End Documentation ](https://realitycrisis.atlassian.net/wiki/spaces/HOL/pages/2038235137/Backend+layer)
+ - [Hollow View Documentation](https://realitycrisis.atlassian.net/wiki/spaces/HOL/pages/2041970692/Holoview+app)
 
 ## Video Presentation 
 HoloView Lukso Hackathon Presentation 
@@ -41,3 +41,5 @@ An invitation to use the Holoview IOS version through Testflight has been sent t
  - hugo@lukso.io 
  - jean@lukso.io 
  - marjorie@lukso.io
+
+Link to Android version 
