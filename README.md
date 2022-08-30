@@ -19,7 +19,7 @@ Holoview is composed of three main parts the Unity build, Reality Crisis backend
 
 - The Reality Crisis backend is a middle layer between the Holoview application and the L16 testnet. This middle layer allows us to recall data from the L16 test net and IPFS servers including LSP3, LSP4, and LSP8 assets and metadata. We have also produced a number of utility API calls for this middle layer making functions like creating a Universal Profile, deploying an LSP8 contract, and minting assets much easier. 
 
-- The L16 testnet is Luksos ecosystem containing the assets, profiles, and contracts being called by Holoview. 
+- The L16 testnet is Luksos ecosystem containing the assets, profiles, and contracts being called by Holoview. The most important elements for this build are the Universal Profile which acts as the account connecting to Holoview and the LSP8 Contracts which contain the link to the assets and data for objects in Holoview. 
 
 ## Build Documentation 
 
