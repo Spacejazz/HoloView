@@ -1,5 +1,5 @@
 # HoloView 
-An AR NFT viewer for Universal Profiles on mobile devices devloped by the team at [Reality Crisis](https://realitycrisis.io/) 
+An AR NFT viewer for Universal Profiles avaialble on Android and IOS devloped by the team at [Reality Crisis](https://realitycrisis.io/) 
 
 Team members: 
  Kasmir Lehto : kasimir.lehto@realitycrisis.io
