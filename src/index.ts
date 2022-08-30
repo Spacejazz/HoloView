@@ -22,17 +22,31 @@ const tokenMintRoute = app.route('/token/mint');
 const tokenTransferRoute = app.route('/token/transfer');
 
 app.route('/meta/data').get(async (req, res) => {
-    if (typeof req.query.hash === 'string') {
-        const data = await getData(req.query.hash);
-        const bufferedData = Buffer.from(data);
-        
-        res.send(bufferedData);
-    } else {
-        res.send({
+    try {
+        if (typeof req.query.hash === 'string') {
+            const data = await getData(req.query.hash);
+            if (typeof data === 'string' || typeof data === 'object' ){
+                const bufferedData = Buffer.from(data);
+                res.send(bufferedData);
+            }else { 
+                res.send({
+                    status: 400,
+                    message: "Bad Response"
+                });
+            }
+        } else {
+            res.send({
+                status: 400,
+                message: "Bad Request"
+            });
+        }
+    } catch (error) {
+        console.log("error: ", error);
+        res.json({
             status: 400,
-            message: "Bad Request"
-        });
-    }
+            error
+        })
+    }   
 })
 
 universalProfileAssetsRoute.get(async (req, res) => {
@@ -50,6 +64,10 @@ universalProfileAssetsRoute.get(async (req, res) => {
         }
     } catch (error) {
         console.log("error: ", error);
+        res.json({
+            status: 400,
+            error
+        })
     }
 })
 
