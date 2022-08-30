@@ -12,6 +12,9 @@ Team members:
 
 HoloView is a mobile application for Android and IOS that allows users to view all LSP8 based assets stored under a Universal Profile in Augmented Reality. Users can bring assets into an AR environment, place, scale, rotate their assets to a desired position, and then save the position of those assets in space to be re-called at any time.
 
+## Video Presentation 
+HoloView Lukso Hackathon Presentation
+
 ## Architecture 
 Holoview is composed of three main parts the Unity build, Reality Crisis backend, and the L16 test net. 
 
@@ -26,10 +29,7 @@ Holoview is composed of three main parts the Unity build, Reality Crisis backend
 ## Build Documentation 
 
  - [Back End Documentation ](https://realitycrisis.atlassian.net/wiki/spaces/HOL/pages/2038235137/Backend+layer)
- - [Hollow View Documentation](https://realitycrisis.atlassian.net/wiki/spaces/HOL/pages/2041970692/Holoview+app)
-
-## Video Presentation 
-HoloView Lukso Hackathon Presentation 
+ - [Hollow View Documentation](https://realitycrisis.atlassian.net/wiki/spaces/HOL/pages/2041970692/Holoview+app) 
 
 ## Try Holoview 
 An invitation to use the Holoview IOS version through Testflight has been sent to 
