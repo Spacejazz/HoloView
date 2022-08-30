@@ -21,6 +21,8 @@ Holoview is composed of three main parts the Unity build, Reality Crisis backend
 
 - The L16 testnet is Luksos ecosystem containing the assets, profiles, and contracts being called by Holoview. The most important elements for this build are the Universal Profile which acts as the account connecting to Holoview and the LSP8 Contracts which contain the link to the assets and data for objects in Holoview. 
 
+![Architecture Diagram](https://gitlab.com/igor.dmitrus1/lukso_nft/-/raw/Develop/images/archdiagram.png)
+
 ## Build Documentation 
 
 [Back End Documentation ](https://realitycrisis.atlassian.net/wiki/spaces/HOL/pages/2038235137/Backend+layer)
