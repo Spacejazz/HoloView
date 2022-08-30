@@ -30,3 +30,14 @@ Holoview is composed of three main parts the Unity build, Reality Crisis backend
 
 ## Video Presentation 
 HoloView Lukso Hackathon Presentation 
+
+## Try Holoview 
+An invitation to use the Holoview IOS version through Testflight has been sent to 
+ - jonathan@lukso.io 
+ - callum@lukso.io 
+ - jakeprins@outlook.com 
+ - yamen@lukso.io 
+ - fabian@futureagency.io 
+ - hugo@lukso.io 
+ - jean@lukso.io 
+ - marjorie@lukso.io
