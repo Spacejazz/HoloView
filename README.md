@@ -1,4 +1,3 @@
-a
 # HoloView 
 ![Sneek Peak](https://gitlab.com/igor.dmitrus1/lukso_nft/-/raw/Develop/images/holoview.gif)
 
