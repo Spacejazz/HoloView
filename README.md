@@ -1,5 +1,5 @@
 # HoloView 
-![Sneek Peak](./images/holoview.gif)
+![Sneek Peak](./images/holoview.gif) ![logo](./images/holview.jpeg)
 
 **Team members**
  - Kasmir Lehto : kasimir.lehto@realitycrisis.io
