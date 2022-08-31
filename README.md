@@ -1,7 +1,7 @@
 # HoloView 
 ![Sneek Peak](https://gitlab.com/igor.dmitrus1/lukso_nft/-/raw/Develop/images/holoview.gif)
 
-**Team members: **
+**Team members**
  - Kasmir Lehto : kasimir.lehto@realitycrisis.io
  - Igor Dmytrus : igor.dmitrus@realitycrisis.io
  - Csaba Bolyós : bladeszasza@gmail.com
@@ -11,7 +11,7 @@
 ## Description
 We believe there is a high demand for better interaction betwenn digital assets, NFTs, and their owners. Reality Crisis believes AR is an answer, and we want to help bridge the gap. 
 
-**HoloView **is a mobile application for Android and IOS that allows users to view all LSP8 based assets stored under a Universal Profile in Augmented Reality. Users can bring assets into an AR environment, place, scale, rotate their assets to a desired position, and then save the position of those assets in space to be re-called at any time.
+**HoloView** is a mobile application for Android and IOS that allows users to view all LSP8 based assets stored under a Universal Profile in Augmented Reality. Users can bring assets into an AR environment, place, scale, rotate their assets to a desired position, and then save the position of those assets in space to be re-called at any time.
 
 ## Video Presentation 
 HoloView Lukso Hackathon Presentation
