@@ -34,7 +34,7 @@ Holoview is composed of three main parts the Unity build, Reality Crisis backend
  - [Hollow View Documentation](https://realitycrisis.atlassian.net/wiki/spaces/HOL/pages/2041970692/Holoview+app) 
 
 ## Try Holoview 
-An invitation to use the Holoview IOS version through Testflight has been sent to 
+An invitation to use the Holoview IOS version through Testflight will be sent to 
  - jonathan@lukso.io 
  - callum@lukso.io 
  - jakeprins@outlook.com 
@@ -44,7 +44,7 @@ An invitation to use the Holoview IOS version through Testflight has been sent t
  - jean@lukso.io 
  - marjorie@lukso.io
 
-The invitation will prompt you to download Testflight from the App store. Once Testflight is installed please login using your Apple ID. Once you have logged in a second email invitation will come from Testflight inviting you to the current HoloView build. If the email above is not linked to your Apple ID or you are having issues accessing please reach out to Kasmir Lehto : kasimir.lehto@realitycrisis.io.
+The invitation will prompt you to download Testflight from the App store. Once Testflight is installed please login using your Apple ID. If the email above is not linked to your Apple ID or you are having issues accessing please reach out to Kasmir Lehto : kasimir.lehto@realitycrisis.io.
 
 [Link to Android version](https://drive.google.com/drive/folders/1Qf_gKMLAoa_2-LYODVDs563OjywI0EFs?usp=sharing) 
 
