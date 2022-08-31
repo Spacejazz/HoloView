@@ -1,0 +1,566 @@
+{
+	"info": {
+		"_postman_id": "22699b13-dd15-4a33-8e10-d96fb486665a",
+		"name": "Holoview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "serverCalls",
+			"item": [
+				{
+					"name": "getByteData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "us-tx1.bofanodes.io:25000/meta/data/?hash=QmdVRMeHmKcbaspRxKSnZUuFb8tw2Sx66LAeAeCy2Msq6m",
+							"host": [
+								"us-tx1",
+								"bofanodes",
+								"io"
+							],
+							"port": "25000",
+							"path": [
+								"meta",
+								"data",
+								""
+							],
+							"query": [
+								{
+									"key": "hash",
+									"value": "QmdVRMeHmKcbaspRxKSnZUuFb8tw2Sx66LAeAeCy2Msq6m"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deployLSP3UniversalProfile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {",
+									"  pm.expect(pm.response.code).to.eql(200);",
+									"});",
+									"",
+									"const responseJson = pm.response.json();",
+									"pm.collectionVariables.set(\"universal_profile\", responseJson.universalProfile.address);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"second account for the transfer test\",\n    \"description\": \"testing testing\",\n    \"walletAddress\":{{wallet_address}}    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "us-tx1.bofanodes.io:25000/up/deploy/",
+							"host": [
+								"us-tx1",
+								"bofanodes",
+								"io"
+							],
+							"port": "25000",
+							"path": [
+								"up",
+								"deploy",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deployLSP8Contract",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {",
+									"  pm.expect(pm.response.code).to.eql(200);",
+									"});",
+									"",
+									"const responseJson = pm.response.json();",
+									"pm.collectionVariables.set(\"contract_address\", responseJson.LSP8.LSP8Address);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"controllerAddress\": \"{{wallet_address}}\",\n    \"name\": \"flower \",\n    \"symbol\": \"holoviewsymbol\",\n    \"digitalAssetMetadata\": {\n      \"LSP4Metadata\": {\n          \"description\": \"digital art rainy flower and more\",\n          \"icon\": [\n              [\n                  {\n                      \"width\": 256,\n                      \"height\": 256,\n                      \"hashFunction\": \"keccak256(bytes)\",\n                      \"hash\": \"96bdba552eea46d7ffefac87d1bee73dafe5d63900dfafec4dfa22917dc70190\",\n                      \"url\": \"QmbGdtVyJMdFCTaB5UJjN663fXik4EMb7eA4A7auinRgAb\"\n                  }\n              ],\n              [\n                        {\n                            \"width\": 256,\n                            \"height\": 256,\n                            \"hashFunction\": \"keccak256(bytes)\",\n                            \"hash\": \"7537a0017d45b83566d0861547e844074e7f79d21dbff7eb0434494cc608c762\",\n                            \"url\": \"QmVgKFTz6dkTjErqddFmaCcqt7vZExAZMmPu8pJwnSYGz8\"\n                        }\n              ]\n          ],\n          \"assets\": [\n              {\n                  \"hashFunction\": \"keccak256(bytes)\",\n                  \"hash\": \"484e5380dbdac38d571a9aee28958e86480ca634ba08776937b4c6e67edb649d\",\n                  \"url\": \"QmYM4W81r5XfYD91XKFSjR5PQPTatNqhwsbHQ8Ni9jkvib\",\n                  \"fileType\": \"glb\"\n              },\n              {\n                        \"hashFunction\": \"keccak256(bytes)\",\n                        \"hash\": \"de3bee35b9c35621a82b413873f84b0e7007a8f93e8ccb2c41f40aa99c992ff6\",\n                        \"url\": \"QmXJa47iTEMMDisyuvnCmp6bDb1Xw2if11xxi63NoWEySN\",\n                        \"fileType\": \"glb\"\n              }\n          ]\n      }\n  } \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "us-tx1.bofanodes.io:25000/token/",
+							"host": [
+								"us-tx1",
+								"bofanodes",
+								"io"
+							],
+							"port": "25000",
+							"path": [
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mint",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {",
+									"  pm.expect(pm.response.code).to.eql(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"universalProfileAddress\": \"{{universal_profile}}\",\n    \"contractAddress\": \"{{contract_address}}\",\n    \"walletAddress\":\"{{wallet_address}}\"    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "us-tx1.bofanodes.io:25000/token/mint/",
+							"host": [
+								"us-tx1",
+								"bofanodes",
+								"io"
+							],
+							"port": "25000",
+							"path": [
+								"token",
+								"mint",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transfer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"universalProfileAddress\": \"{{universal_profile}}\",\n    \"recepientWalletAddress\": \"{{recepient_wallet_address}}\",\n    \"contractAddress\": \"{{contract_address}}\",\n    \"walletAddress\":\"{{wallet_address}}\"    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "us-tx1.bofanodes.io:25000/token/transfer/",
+							"host": [
+								"us-tx1",
+								"bofanodes",
+								"io"
+							],
+							"port": "25000",
+							"path": [
+								"token",
+								"transfer",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAssets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "us-tx1.bofanodes.io:25000/up/assets/?upaddress={{universal_profile}}&type={{assets_type}}",
+							"host": [
+								"us-tx1",
+								"bofanodes",
+								"io"
+							],
+							"port": "25000",
+							"path": [
+								"up",
+								"assets",
+								""
+							],
+							"query": [
+								{
+									"key": "upaddress",
+									"value": "{{universal_profile}}"
+								},
+								{
+									"key": "type",
+									"value": "{{assets_type}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUniversalProfileData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "us-tx1.bofanodes.io:25000/up/?upaddress={{universal_profile}}",
+							"host": [
+								"us-tx1",
+								"bofanodes",
+								"io"
+							],
+							"port": "25000",
+							"path": [
+								"up",
+								""
+							],
+							"query": [
+								{
+									"key": "upaddress",
+									"value": "{{universal_profile}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "deployLSP3UniversalProfile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"  pm.expect(pm.response.code).to.eql(200);",
+							"});",
+							"",
+							"const responseJson = pm.response.json();",
+							"pm.collectionVariables.set(\"universal_profile\", responseJson.universalProfile.address);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ryan Collects\",\n    \"description\": \"Hi! I am Ryan Collects and this is a collection of photos, videos, and assets I have gathered and documented while traveling and exploring my love for graffiti and street art.I hope you enjoy it.\",\n    \"walletAddress\": \"{{wallet_address}}\",\n    \"profileImage\": [\n            {\n                      \"width\": 1000,\n                      \"height\": 1250,\n                      \"hashFunction\": \"keccak256(bytes)\",\n                      \"hash\": \"2732c399ddf5c71844aa94d31fc88360bd3684814a57135ccda8f3b0703d84bb\",\n                      \"url\": \"QmT1TsebJDdfuj2GP4wHmCWs7AH7n16Pvxy1QRHMAwoFDq\"\n            },\n            {\n                      \"width\": 800,\n                      \"height\": 1000,\n                      \"hashFunction\": \"keccak256(bytes)\",\n                      \"hash\": \"afeded70e9e3a3235fcc49f0986de8ab2a1e0540b22ad26a6c7e1d9378f8cdc9\",\n                      \"url\": \"QmXTT62smg8knEFURnyrmcyybbqUgYQBsJ5LGpv11dCqBR\"\n            },\n            {\n                      \"width\": 800,\n                      \"height\": 1000,\n                      \"hashFunction\": \"keccak256(bytes)\",\n                      \"hash\": \"afeded70e9e3a3235fcc49f0986de8ab2a1e0540b22ad26a6c7e1d9378f8cdc9\",\n                      \"url\": \"ipfs://QmXTT62smg8knEFURnyrmcyybbqUgYQBsJ5LGpv11dCqBR\"\n            }\n    ],\n    \"backgroundImage\":[\n            {\n                      \"width\": 1600,\n                      \"height\": 1000,\n                      \"hashFunction\": \"keccak256(bytes)\",\n                      \"hash\": \"51426628fe806f6ea9ae008819a25633287d813fe2facd846b62d6748295af0a\",\n                      \"url\": \"QmZ3hRqRUix1PhFfaajzghe3W7rY9vGmFCtnUPfuKwZ1R4\"\n            },\n            {\n                      \"width\": 1600,\n                      \"height\": 1000,\n                      \"hashFunction\": \"keccak256(bytes)\",\n                      \"hash\": \"51426628fe806f6ea9ae008819a25633287d813fe2facd846b62d6748295af0a\",\n                      \"url\": \"ipfs://QmZ3hRqRUix1PhFfaajzghe3W7rY9vGmFCtnUPfuKwZ1R4\"\n            }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3088/up/deploy/",
+					"host": [
+						"localhost"
+					],
+					"port": "3088",
+					"path": [
+						"up",
+						"deploy",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deployLSP8Contract",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"  pm.expect(pm.response.code).to.eql(200);",
+							"});",
+							"",
+							"const responseJson = pm.response.json();",
+							"pm.collectionVariables.set(\"contract_address\", responseJson.LSP8.LSP8Address);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"controllerAddress\": \"{{wallet_address}}\",\n    \"name\": \"Dragon Sculpture\",\n    \"symbol\": \"RCGrafity\",\n    \"digitalAssetMetadata\": {\n      \"LSP4Metadata\": {\n          \"description\": \"A dragon based sculpture to place on a virtual desk\",\n          \"icon\": [\n              [\n                  {\n                      \"width\": 256,\n                      \"height\": 256,\n                      \"hashFunction\": \"keccak256(bytes)\",\n                      \"hash\": \"1df0bc76d04bf84ebd78a8e3c745a0fa58c2b6e700da7407006cbab384c1b125\",\n                      \"url\": \"QmaSBgz834VxePPkTFNPEtroDHaEVCEYQcuBcxcerJW1cP\"\n                  },\n                  {\n                      \"width\": 256,\n                      \"height\": 256,\n                      \"hashFunction\": \"keccak256(bytes)\",\n                      \"hash\": \"1df0bc76d04bf84ebd78a8e3c745a0fa58c2b6e700da7407006cbab384c1b125\",\n                      \"url\": \"ipfs://QmaSBgz834VxePPkTFNPEtroDHaEVCEYQcuBcxcerJW1cP\"\n                  }\n              ]\n          ],\n          \"assets\": [\n              {\n                  \"hashFunction\": \"keccak256(bytes)\",\n                  \"hash\": \"68eed2bacad4ae932a556de6387577e5cb445b518e7aba32d329405bbbe98eb1\",\n                  \"url\": \"QmRGaWifQL8JvXNrmRFG7jMZxuMUwYXMGVDZsxW7HVVFy4\",\n                  \"fileType\": \"glb\"\n              },\n              {\n                  \"hashFunction\": \"keccak256(bytes)\",\n                  \"hash\": \"68eed2bacad4ae932a556de6387577e5cb445b518e7aba32d329405bbbe98eb1\",\n                  \"url\": \"ipfs://QmRGaWifQL8JvXNrmRFG7jMZxuMUwYXMGVDZsxW7HVVFy4\",\n                  \"fileType\": \"glb\"\n              }\n          ]\n      }\n  } \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3088/token/",
+					"host": [
+						"localhost"
+					],
+					"port": "3088",
+					"path": [
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"  pm.expect(pm.response.code).to.eql(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"universalProfileAddress\": \"{{universal_profile}}\",\n    \"contractAddress\": \"{{contract_address}}\",\n    \"walletAddress\":\"{{wallet_address}}\"    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3088/token/mint/",
+					"host": [
+						"localhost"
+					],
+					"port": "3088",
+					"path": [
+						"token",
+						"mint",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transfer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"universalProfileAddress\": \"{{universal_profile}}\",\n    \"recepientUniversalProfileAddress\": \"{{recepient_universal_profile_address}}\",\n    \"contractAddress\": \"{{contract_address}}\",\n    \"walletAddress\":\"{{wallet_address}}\"    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3088/token/transfer/",
+					"host": [
+						"localhost"
+					],
+					"port": "3088",
+					"path": [
+						"token",
+						"transfer",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAssets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3088/up/assets/?upaddress={{universal_profile}}&type={{assets_type}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3088",
+					"path": [
+						"up",
+						"assets",
+						""
+					],
+					"query": [
+						{
+							"key": "upaddress",
+							"value": "{{universal_profile}}"
+						},
+						{
+							"key": "type",
+							"value": "{{assets_type}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByteData",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:3088/meta/data/?hash=QmdVRMeHmKcbaspRxKSnZUuFb8tw2Sx66LAeAeCy2Msq6m",
+					"host": [
+						"localhost"
+					],
+					"port": "3088",
+					"path": [
+						"meta",
+						"data",
+						""
+					],
+					"query": [
+						{
+							"key": "hash",
+							"value": "QmdVRMeHmKcbaspRxKSnZUuFb8tw2Sx66LAeAeCy2Msq6m"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUniversalProfileData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3088/up/?upaddress={{universal_profile}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3088",
+					"path": [
+						"up",
+						""
+					],
+					"query": [
+						{
+							"key": "upaddress",
+							"value": "{{universal_profile}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "universal_profile",
+			"value": "0x6168ca697a45c17F4190B8C4706e828944f75584"
+		},
+		{
+			"key": "wallet_address",
+			"value": "0xcc3c7ca4f4aC5DBfB333b2430608cD42041acAeB",
+			"type": "default"
+		},
+		{
+			"key": "contract_address",
+			"value": "0x594F712f3Bca512A4576F9c14684Fc8cf145ffb2",
+			"type": "default"
+		},
+		{
+			"key": "recepient_universal_profile_address",
+			"value": "0xE361C1137770Ed678883Ba3553A2dd5939bB94Ec",
+			"type": "default"
+		},
+		{
+			"key": "assets_type",
+			"value": "RECEIVED",
+			"type": "default"
+		}
+	]
+}
