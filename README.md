@@ -46,6 +46,8 @@ An invitation to use the Holoview IOS version through Testflight has been sent t
  - jean@lukso.io 
  - marjorie@lukso.io
 
+The invitation will invite you to download Testflight from the App store. Once Testflight is installed please login using that same email account. Once you have logged in a second email invitation will come from Testflight inviting you to the current HoloView build.
+
 [Link to Android version](https://drive.google.com/drive/folders/1Qf_gKMLAoa_2-LYODVDs563OjywI0EFs?usp=sharing) 
 
 ## UI Walkthrough 
