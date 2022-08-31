@@ -16,7 +16,7 @@ We believe there is a high demand for better interaction between digital assets,
 HoloView is a personal AR NFT gallery creator tool that gives the user more tangible ways to enjoy and show off their NFT collection, and bring their assets into the reality they’re living in. You could think of it as an immersive wallet.
 
 ## Video Presentation 
-HoloView Lukso Hackathon Presentation
+https://youtu.be/cJf2NiP6rOM
 
 ## Architecture 
 Holoview is composed of three main parts the Unity build, Reality Crisis backend, and the L16 test net. 
