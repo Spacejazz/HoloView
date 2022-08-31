@@ -9,7 +9,7 @@
  - Nathan Lienau : nlienau1@gmail.com
 
 ## Description
-We believe there is a high demand for better interaction betwenn digital assets, NFTs, and their owners. [Reality Crisis](https://realitycrisis.io/) believes AR is an answer, and we want to help bridge the gap. 
+We believe there is a high demand for better interaction betwenn digital assets, NFTs, and their owners. [Reality Crisis](https://realitycrisis.io/) believes AR is the answer, and we want to help bridge the gap. 
 
 **HoloView** is a mobile application for Android and IOS that allows users to view all LSP8 based assets stored under a Universal Profile in Augmented Reality. Users can Open a Universal Profile bring their assets into an AR environment, place, scale, rotate them to a desired position, and then save the location of those assets in space to be re-called at any time. 
 
