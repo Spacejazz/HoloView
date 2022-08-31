@@ -62,3 +62,6 @@ An invitation to use the Holoview IOS version through Testflight has been sent t
    - Name and Save Anchor to recall at another time 
    - `Load`: Recall previously saved anchors 
  - `Record`: drops UI and begins screen recording scene. Press "Lukso" text at bottom to end recording. 
+
+ ## Known Bugs and Limitations 
+ The current mobile version does not have a "sign in sign out" function for Universal Profiles. The Universal Profile included with the build is coded into the application. Information regarding this account can be found in our Confluence page 
