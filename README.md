@@ -65,4 +65,5 @@ An invitation to use the Holoview IOS version through Testflight has been sent t
  - `Record`: drops UI and begins screen recording scene. Press "Lukso" text at bottom to end recording. 
 
  ## Known Bugs and Limitations 
- The current mobile version does not have a "sign in sign out" function for Universal Profiles. The Universal Profile included with the build is coded into the application. Information regarding this account can be found in our Confluence page.
+ - The current mobile version does not have a "sign in sign out" function for Universal Profiles. The Universal Profile included with the build is coded into the application. Information regarding this account can be found in our Confluence page.
+ - The current version has a bug when trying to move, scale, add new assets to an anchor that is loaded from anchor list 
