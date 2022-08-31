@@ -21,7 +21,7 @@ HoloView Lukso Hackathon Presentation
 ## Architecture 
 Holoview is composed of three main parts the Unity build, Reality Crisis backend, and the L16 test net. 
 
-- The Unity build for HoloView is capable of "scanning" an enviroment using AR Scan producing x,y,z planes and coordinates allowing the user to place digital assets in an augmented reality enviroment. Once these planes have been produced you are able to load digital assets onto a set coordinate and "anchor" them to the scene. Anchoring points are described with image processing algorithms and produces a vector of features. The array of these vectors describes our scene and is saved to our device under a choosen name. When the user re-launches the application and selects the saved anchor they want to recall the `load` function recalls the array of these vectors. If the vectors match the scene is recreated with the x y z coordinating system.
+- The Unity build for HoloView is capable of "scanning" an enviroment using `AR Scan` producing x,y,z planes and coordinates allowing the user to place digital assets in an augmented reality enviroment. Once these planes have been produced you are able to load digital assets onto a set coordinate and `anchor` them to the scene. Anchoring points are described with image processing algorithms and produces a vector of features. The array of these vectors describes our scene and is saved to our device under a choosen name. When the user re-launches the application and selects the saved anchor they want to recall the `load` function recalls the array of these vectors. If the vectors match the scene is recreated with the x y z coordinating system.
 
 - The Reality Crisis backend is a middle layer between the Holoview application and the L16 testnet. This middle layer allows us to recall data from the L16 test net and IPFS servers including LSP3, LSP4, and LSP8 assets and metadata. We have also produced a number of utility API calls for this middle layer making functions like creating a Universal Profile, deploying an LSP8 contract, and minting assets much easier. 
 
@@ -65,4 +65,4 @@ An invitation to use the Holoview IOS version through Testflight has been sent t
  - `Record`: drops UI and begins screen recording scene. Press "Lukso" text at bottom to end recording. 
 
  ## Known Bugs and Limitations 
- The current mobile version does not have a "sign in sign out" function for Universal Profiles. The Universal Profile included with the build is coded into the application. Information regarding this account can be found in our Confluence page 
+ The current mobile version does not have a "sign in sign out" function for Universal Profiles. The Universal Profile included with the build is coded into the application. Information regarding this account can be found in our Confluence page.
