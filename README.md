@@ -1,5 +1,6 @@
 # HoloView 
-![Sneek Peak](https://gitlab.com/igor.dmitrus1/lukso_nft/-/raw/Develop/images/holoview.gif)
+| ![Sneek Peak](./images/holoview.gif) | ![logo](./images/holview.jpeg) |
+| :-------: | :-------------------------------------------------------- |
 
 **Team members**
  - Kasmir Lehto : kasimir.lehto@realitycrisis.io
@@ -16,12 +17,12 @@ We believe there is a high demand for better interaction between digital assets,
 HoloView is a personal AR NFT gallery creator tool that gives the user more tangible ways to enjoy and show off their NFT collection, and bring their assets into the reality they’re living in. You could think of it as an immersive wallet.
 
 ## Video Presentation 
-HoloView Lukso Hackathon Presentation
+https://youtu.be/cJf2NiP6rOM
 
 ## Architecture 
 Holoview is composed of three main parts the Unity build, Reality Crisis backend, and the L16 test net. 
 
-- The Unity build for HoloView is capable of "scanning" an enviroment using `AR Scan` producing x,y,z planes and coordinates allowing the user to place digital assets. Once these planes have been produced you are able to load digital assets onto a set coordinate and "anchor" them to the scene. `Anchors` are local descriptors gathering vectors of data which check for similarities within a scene. These anchors allow the assets to be recalled to the original desired position. 
+- The Unity build for HoloView is capable of "scanning" an enviroment using `AR Scan` producing x,y,z planes and coordinates allowing the user to place digital assets in an augmented reality enviroment. Once these planes have been produced you are able to load digital assets onto a set coordinate and `anchor` them to the scene. Anchoring points are described with image processing algorithms and produces a vector of features. The array of these vectors describes our scene and is saved to our device under a choosen name. When the user re-launches the application and selects the saved anchor they want to recall the `load` function recalls the array of these vectors. If the vectors match the scene is recreated with the x y z coordinating system.
 
 - The Reality Crisis backend is a middle layer between the Holoview application and the L16 testnet. This middle layer allows us to recall data from the L16 test net and IPFS servers including LSP3, LSP4, and LSP8 assets and metadata. We have also produced a number of utility API calls for this middle layer making functions like creating a Universal Profile, deploying an LSP8 contract, and minting assets much easier. 
 
@@ -65,4 +66,5 @@ An invitation to use the Holoview IOS version through Testflight has been sent t
  - `Record`: drops UI and begins screen recording scene. Press "Lukso" text at bottom to end recording. 
 
  ## Known Bugs and Limitations 
- The current mobile version does not have a "sign in sign out" function for Universal Profiles. The Universal Profile included with the build is coded into the application. Information regarding this account can be found in our Confluence page 
+ - The current mobile version does not have a "sign in sign out" function for Universal Profiles. The Universal Profile included with the build is coded into the application. Information regarding this account can be found in our Confluence page.
+ - The current version has a bug when trying to move, scale, add new assets to an anchor that is loaded from anchor list 
