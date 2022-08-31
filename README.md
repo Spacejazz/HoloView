@@ -1,5 +1,5 @@
 # HoloView 
-![Sneek Peak](https://gitlab.com/igor.dmitrus1/lukso_nft/-/raw/Develop/images/holoview.gif)
+![Sneek Peak](./images/holoview.gif)
 
 **Team members**
  - Kasmir Lehto : kasimir.lehto@realitycrisis.io
