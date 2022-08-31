@@ -1,11 +1,13 @@
 
 import "dotenv/config";
 import { L16 } from "../constants";
-// import { toUTF8Array } from "../utils/toByteArray"
 import Web3 from "web3";
 import LSP8IdentifiableDigitalAsset from '@lukso/lsp-smart-contracts/artifacts/LSP8IdentifiableDigitalAsset.json';
 import { transferPayload } from "../interface/transfer";
 import { toUTF8Array } from "../utils/toByteArray";
+
+
+// IN DEVELOPMENT NOT FUNCTIONAL
 
 
 var currentProvider = new Web3.providers.HttpProvider(`${L16.endpoint}`)
@@ -13,9 +15,6 @@ const web3 = new Web3();
 web3.setProvider(currentProvider);
 
 web3.eth.accounts.wallet.add(process.env.PRIVATE_KEY || "");
-
-
-
 
     /**
      * @param from The sending address.

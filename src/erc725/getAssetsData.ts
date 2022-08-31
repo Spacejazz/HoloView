@@ -15,7 +15,12 @@ const config = {
 };
 
 
-
+/**
+ * function responsible for fetching the correponding LSP8 contract towards the universal profile and fetch also it's metadata
+ * @param upAddress universal profile address
+ * @param type of the contracts
+ * @returns list of assets
+ */
 export const getAssetsWithMetadataFrom = async (upAddress: string, type : AssetType) => {
   const erc725 = new ERC725(
     LSP3 as ERC725JSONSchema[],

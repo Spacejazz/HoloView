@@ -11,7 +11,11 @@ const config = {
 };
 
 
-
+/**
+ * get universal profile data
+ * @param universalProfileAddress 
+ * @returns universal Profile LSP3 meta data
+ */
 export const getUniversalProfile = async (universalProfileAddress:string) => {
 
   const erc725 = new ERC725(

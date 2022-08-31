@@ -8,6 +8,11 @@ const lspFactory = new LSPFactory(L16.endpoint, {
     chainId: L16.chainId, // Chain Id of the network you want to deploy to
   });
 
+  /**
+   * deploy universal profile address
+   * @param upMetaData metadata containing walletAddress, name, description, profileImage, backgroundImage
+   * @returns universal profile contract address
+   */
 export async function deployUniversalProfileFor(upMetaData: upMetaData){
 
   const {walletAddress, name, description, profileImage, backgroundImage} = upMetaData;

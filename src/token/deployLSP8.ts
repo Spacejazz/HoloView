@@ -17,7 +17,11 @@ const lspFactory = new LSPFactory(L16.endpoint, {
 });
 
 
-
+/**
+ * deploy LSP8 contract
+ * @param jsonBody 
+ * @returns 
+ */
 export async function deployLSP8(jsonBody: DigitalAssetDeploymentOptions){
     const metadata1 =  await lspFactory.LSP8IdentifiableDigitalAsset.deploy(
       jsonBody,

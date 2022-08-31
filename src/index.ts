@@ -14,6 +14,8 @@ const port = 3088
 const app = express();
 app.use(express.json());
 const server = createServer(app);
+
+// routing support
 const universalProfileAssetsRoute = app.route('/up/assets');
 const universalProfileRoute = app.route('/up');
 const universalProfileDeployRoute = app.route('/up/deploy');
@@ -21,6 +23,9 @@ const tokenRoute = app.route('/token');
 const tokenMintRoute = app.route('/token/mint');
 const tokenTransferRoute = app.route('/token/transfer');
 
+/**
+ * handler for getting the buffered byte array
+ */
 app.route('/meta/data').get(async (req, res) => {
     try {
         if (typeof req.query.hash === 'string') {
@@ -49,6 +54,10 @@ app.route('/meta/data').get(async (req, res) => {
     }   
 })
 
+
+/**
+ * handler for getting the asset list
+ */
 universalProfileAssetsRoute.get(async (req, res) => {
     try {
         const upAddress = `${req.query.upaddress}`;
@@ -71,10 +80,11 @@ universalProfileAssetsRoute.get(async (req, res) => {
     }
 })
 
-
+/**
+ * handler for getting the universal profile metadata
+ */
 universalProfileRoute.get(async (req, res) => {
     try {
-
         const upAddress = `${req.query.upaddress}`;
         if (upAddress) {
             res.json({
@@ -96,6 +106,10 @@ universalProfileRoute.get(async (req, res) => {
     }
 })
 
+/**
+ * handler for deploying universal profile 
+ * we support name, description, profile and background image
+ */
 universalProfileDeployRoute.post(async (req, res) => {
     try {
         res.json({
@@ -111,6 +125,9 @@ universalProfileDeployRoute.post(async (req, res) => {
     }
 })
 
+/**
+ * handler for deploying LSP8 contract
+ */
 tokenRoute.post(async (req, res) => {
     try {
         res.json({
@@ -126,7 +143,9 @@ tokenRoute.post(async (req, res) => {
     }
 })
 
-
+/**
+ * handler for the mint functionality
+ */
 tokenMintRoute.post(async (req, res) => {
     try {
         res.json({
@@ -142,6 +161,9 @@ tokenMintRoute.post(async (req, res) => {
     }
 })
 
+/**
+ * in development transfer functionality
+ */
 tokenTransferRoute.post(async (req, res) => {
     try {
         res.json({

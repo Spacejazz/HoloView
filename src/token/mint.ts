@@ -12,6 +12,16 @@ web3.setProvider(currentProvider);
 
 web3.eth.accounts.wallet.add(process.env.PRIVATE_KEY || "");
 
+/**
+ * function responsible for minting a contract
+ * @param walletAddress controller address
+ * @param universalProfileAddress destination universal profile address
+ * @param contractAddress 
+ * @param gas 
+ * @param gasPrice 
+ * @param data 
+ * @returns the mint result and receipt
+ */
 export async function mint(walletAddress:string, universalProfileAddress:string, contractAddress:string, gas = 5_000_000, gasPrice = '10000000000', data = " "){
 
     const myToken = new web3.eth.Contract(LSP8Mintable.abi as any, contractAddress, {
