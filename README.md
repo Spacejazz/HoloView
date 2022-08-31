@@ -1,5 +1,5 @@
 # HoloView 
-An AR NFT viewer for Universal Profiles avaialble on Android and IOS devloped by the team at [Reality Crisis](https://realitycrisis.io/) 
+We believe there is high demand for better interaction between digital assets, Nfts, and their owners. Our team at Reality Crisis believes AR is a solution, and we want to help bridge the gap. 
 
 ![Sneek Peak](https://gitlab.com/igor.dmitrus1/lukso_nft/-/raw/Develop/images/holoview.gif)
 
@@ -11,7 +11,6 @@ Team members:
  - Nathan Lienau : nlienau1@gmail.com
 
 ## Description
-
 HoloView is a mobile application for Android and IOS that allows users to view all LSP8 based assets stored under a Universal Profile in Augmented Reality. Users can bring assets into an AR environment, place, scale, rotate their assets to a desired position, and then save the position of those assets in space to be re-called at any time.
 
 ## Video Presentation 
